@@ -1,6 +1,6 @@
 # Internet of Things in Action - Redi School course
 
-The first draft of this document is created based on this [course overview](https://docs.google.com/spreadsheets/d/18vCBulM79LoPHMmUz0GpQbgOO8OpR5q3dh5x0vQ31Qo/edit?usp=drive_web&ouid=107084456412409564147). 
+The first draft of this document is created based on this [course overview](https://docs.google.com/spreadsheets/d/18vCBulM79LoPHMmUz0GpQbgOO8OpR5q3dh5x0vQ31Qo/edit?usp=drive_web&ouid=107084456412409564147).
 
 ## Introduction
 

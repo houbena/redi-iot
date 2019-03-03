@@ -2,7 +2,63 @@
 
 ## Course Session 4 - Raspberry PI 1
 
-Material and sources:
+The practival part of this session covers the common commands used to facilitate working with the RaspberryPi.
+
+### Learning Objectives
+
+By the end of this exercise, you will be able to:
+
+- Access a RaspberryPi
+- Manage a filesystem on a RaspberryPi
+- Install new tools on a RaspberryPi.
+
+### Instructions
+
+#### Accessing the RaspberryPi
+
+Before starting using the RaspberryPi, we need to get access to it.
+First, make sure that:
+- TODO: your RaspberryPi is connected to your computer via ethernet? Or Connected to the Cisco router via Wifi?
+
+##### On Mac or Linux
+If you're on Mac or Linux, you can access your RaspberryPi using a pre-installed tool called SSH (Secure SHell).
+To do so, you need the username (`Pi`) and password provided by the instuctor and the IP address of your RaspberryPi"
+
+```
+[user@machine ~]$ ssh pi@<ip_address>
+```
+
+You wil be asked to enter the password of the user `Pi`.
+
+> Note: when you enter the passowrd, **no** characters such as asterisks will be displayed.
+
+##### On Windows
+On Widnows, we need to install an SSH Client typically [PuTTY](https://www.putty.org/) or [Termius](https://www.termius.com/).
+
+1.  Download PuTTY from [its official page](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+    Double click on the installer and follow the installation wizard.
+    
+2.  Next, open PuTTY, and enter the following:
+
+    - In the hostname field: the IP address.
+    - Make sure that *port 22* is set, and that *connection type* is set to SSH.
+
+    TODO: screenshot of PuTTY
+    
+    You'll be asked for credentials. Enter the user (`Pi`) and the password provdied by the instructor.
+    
+    > Note: when you enter the passowrd, **no** characters such as asterisks will be displayed.
+
+#### Basic Linux Commands
+
+The Operating System of the RaspberryPi is based on Debian (a Linux distribution). Thus, in this part, we'll see some basic commands for filesystem management.
+In this part, we'll see some basic commands to manage filesystem on 
+
+### Conclusion
+
+
+
+### Material and sources:
 
 - [presentation of Asem](data/Cisco_IoT_MQTT.pdf)
 

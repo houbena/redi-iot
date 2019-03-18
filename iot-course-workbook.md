@@ -306,5 +306,7 @@ Get the hostname of your device from the IoT Hub (make sure you added your devic
 
 
 ## Course Session 9 - Microsoft Session #4
+PowerBI session
+Connect e.g. to database.
 
 ## Course Session 11 - Business modeling IoT - practice

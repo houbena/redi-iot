@@ -273,6 +273,31 @@ while IoT Central is SaaS / is much more than an IoT Hub / it comes with several
 2.  Add an **inject** block, double click on it and change the settings to the following:
     -
 
+3.  Insert a Raspberry element "rpi dht22" and modify its settings:
+-
+
+4.  Add a block  **Debug** element from the **Output** section.
+
+5.  Connect your RaspberryPi to your computer via HDMI.
+
+6.  Insert a **Template** element from section **fuction** and add following message:
+
+    ```
+    {
+       "deviceId":"YOURDEVICE",
+       "key":"DEVICEKEY_FROM_AZUREPORTAL",
+       "protocol":"mqtt",
+       "data":{
+           "deviceId":"YOURDEVICE",
+           "temperature":{{payload}},
+           "humidity":{{humidity}}
+
+       }
+    }
+    ```
+
+7.  Add an element **IoT Hub** from the **Cloud** section.
+
 
 
 ## Course Session 9 - Microsoft Session #4

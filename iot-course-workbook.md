@@ -205,7 +205,19 @@ if what we have been doing so far is not challenging enough for you, try control
 
 ## Course Session 7 - Microsoft Session #2
 
+Difference between IoT Hub and IoT Central.
+
+IoT Hub is a PaaS / is an event broker.
+while IoT Central is SaaS / is much more than an IoT Hub / it comes with several things e.g. the IoT Hub and Analytics and Visualization.
+
 ## Course Session 8 - Microsoft Session #3
+
+1.  With RaspberryPi connected to your computer and running, visit on your browser <pi-ip>:1880, you should see the Node-RED page.
+
+2.  Add an **inject** block, double click on it and change the settings to the following:
+    -
+
+
 
 ## Course Session 9 - Microsoft Session #4
 

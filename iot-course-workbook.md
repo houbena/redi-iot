@@ -298,6 +298,11 @@ while IoT Central is SaaS / is much more than an IoT Hub / it comes with several
 
 7.  Add an element **IoT Hub** from the **Cloud** section.
 
+Get the hostname of your device from the IoT Hub (make sure you added your device to the cloud service):
+    -
+
+
+8.   In the Azure portal, go to IoT Hub (if you don't see it, search for it in th esearch field) > **redischool01**.
 
 
 ## Course Session 9 - Microsoft Session #4

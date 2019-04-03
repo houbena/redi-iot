@@ -114,6 +114,8 @@ The setup has two parts:
 
 #### On RaspberryPi
 
+//TODO: preset the RaspberryPi on Azure instead of with the py script. Check email from Matthias:
+
 * ssh into yor RaspberryPi either from CLI (on MacOS and Linux):
 
 ```bash
@@ -258,6 +260,13 @@ if everything runs as expected you should see the following:
 if what we have been doing so far is not challenging enough for you, try controlling the LED using the Temp./Humidity values and add an indication alert of that to the dashboard
 
 ## Course Session 6 - Microsoft Session #1
+
+
+
+Instructor demo:
+- what's the IoT Hub.
+- Overview of Azure, etc.
+
 
 ## Course Session 7 - Microsoft Session #2
 

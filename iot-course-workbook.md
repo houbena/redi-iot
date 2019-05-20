@@ -261,12 +261,59 @@ if what we have been doing so far is not challenging enough for you, try control
 
 ## Course Session 6 - Microsoft Session #1
 
+In this session we will explore the *IoT Hub* of the *Azure Portal*, while connecting our Raspberry Pi to Azure.
+
+### Preparing the Raspberry Pi
+
+1.  Connect your Raspberry Pi to the Cisco WiFi router using following credentials:
+
+    ```
+    Network: REDISCHOOLIOT
+    Password: RediSchool01
+    ```
+    
+2.  In the Raspberry Pi, use Advanced IP address Scanner to get your IP address.
+
+3.  SSH into your Pi using `ssh <user>@<ip>` (Don't forget to replace user and ip with the values provided to you).
+
+### Azure Portal and the IoT Hub
+
+Azure Portal is the management dashboard for the Microsoft Azure Cloud Platform.
 
 
-Instructor demo:
-- what's the IoT Hub.
-- Overview of Azure, etc.
+1.  Sign up to https://portal.azure.com.
 
+    > If you're not part of the ReDi School Azure organization, ask your instructor to add you.
+
+2.  After signing in you should see the following:
+
+    ![Screenshot from the Azure Portal](img/azure-portal.png)
+    
+3.  In the search field, look for `IoT Hub` and open it:
+
+    ![Search for IoT Hub](img/iothub-search.png)
+    
+4.  In IoT Hub, click on `redischool01`,
+    click on the **IoT devices** tab,
+    click on **Add**.
+
+6.  In the device creation form specify your `Device ID` (the primary and secondary keys will be generated), then click **Save**.
+
+### Connecting our Pi to Azure IoT Central
+
+IoT Central is a SaaS (software as a service) solution that allows to connect and monitor your IoT devices.
+
+7.  Visit IoT central on this address https://redischool.azureiotcentral.com and login.
+
+8.  Click on **device explorer**, then under `Templates`, click on **Raspberry Pi**.
+
+9.  Click on **+** to add a your device (your Pi), then click on **Real**:
+
+    ![Adding device to IoT Central](img/iotcentral-rasp.png)
+
+10. Enter your `Device ID` and `Device Name` (that you used in the IoT Hub). You should see your device in the list.
+
+11.  Click on your device name to see a list of available sensors, e.g. humidity, temperature, etc.
 
 ## Course Session 7 - Microsoft Session #2
 

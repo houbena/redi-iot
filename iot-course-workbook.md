@@ -317,26 +317,34 @@ IoT Central is a SaaS (software as a service) solution that allows to connect an
 
 ## Course Session 7 - Microsoft Session #2
 
-Difference between IoT Hub and IoT Central.
+In this session, we will set our Raspberry Pi to send information about the humidity to the Azure IoT Hub.
+The IoT Hub, as we saw in the previous session, is an event broker that handles the communication between your IoT application and the devices it manages.
 
-IoT Hub is a PaaS / is an event broker.
-while IoT Central is SaaS / is much more than an IoT Hub / it comes with several things e.g. the IoT Hub and Analytics and Visualization.
+1.  Connect your Raspberry Pi to your computer, run it, and get the IP of your Pi (for more information about how to do this check the previous session)
 
-## Course Session 8 - Microsoft Session #3
+    Make sure that your temperature sensor is connected to your Raspberry Pi like mentioned in the session "MQTT and RaspberryPi".
 
-1.  With RaspberryPi connected to your computer and running, visit on your browser <pi-ip>:1880, you should see the Node-RED page.
+2.  In your computer, open a browser and visit your Pi on <pi-ip>:1880. You should see the Node-RED page.
 
-2.  Add an **inject** block, double click on it and change the settings to the following:
-    -
+    Node-RED is a development tool for visual programming, where you can create an application based on predefined graphical elements. You have only to connect the elements and configure them correctly. Node-RED is instaled by default on the Raspberry Pi.
+    
+3.  Go to the User Settings of Node-RED and under **Palette > Install**, look for following modules, and click on install in front of each one:
 
-3.  Insert a Raspberry element "rpi dht22" and modify its settings:
--
+    - node-red-contrib-azure-iot-hub
+    - node-red-contrib-dht-sensor
 
-4.  Add a block  **Debug** element from the **Output** section.
+After the installation is done, you should see the new modules in the list of blocks on the left side.
 
-5.  Connect your RaspberryPi to your computer via HDMI.
+3.  In the list of blocks, grab a **inject** and add to the design surface, double click on it, then set it as follows:
 
-6.  Insert a **Template** element from section **fuction** and add following message:
+    - Click on **Repeat** and select *interval* from the dropdown 
+    - to the interval to 5 seconds.
+
+4.  Insert a Raspberry element **rpi dht22** and modify its settings.
+
+5.  In the same manner, add a block  **Debug** element from the **Output** section.
+
+6.  Insert a **Template** element from **Function** section, double click, and add following message:
 
     ```
     {
@@ -351,15 +359,24 @@ while IoT Central is SaaS / is much more than an IoT Hub / it comes with several
        }
     }
     ```
+    
+    Don't forget to replace your *deviceId* and *key* with the values that you get from the IoT Hub. This is possible of course only if you added your device to the cloud service, as mentioned in the previous session.
 
-7.  Add an element **IoT Hub** from the **Cloud** section.
+7.  Add an element **Azure IoT Hub** from the **Cloud** section, double click, then add your hostname. If you didn't already you can get the hostname of your device from the IoT Hub.
 
-Get the hostname of your device from the IoT Hub (make sure you added your device to the cloud service):
-    -
+8.  Finally, connect the visual elements by dragging a line fro the output to the input of each specified element like shown in the next screenshot:
 
+    ![IoT Hub Flow with DHT11 sensor](img/node-red-1.png)
 
-8.   In the Azure portal, go to IoT Hub (if you don't see it, search for it in th esearch field) > **redischool01**.
+9.  In the Azure portal, go to IoT Hub (if you don't see it, search for it in the search field) > **redischool01**.
 
+10. Now deploy your application by clicking on the **Deploy** button in the top right corner.
+If everything is set correctly, you should see events pulled by your application and displayed in the **Debug** tab.
+These events have been sent by the sensor attached to your Raspberry Pi and redirected by the IoT Hub to your application.
+
+## Course Session 8 - Microsoft Session #3
+
+while IoT Central is SaaS / is much more than an IoT Hub / it comes with several things e.g. the IoT Hub and Analytics and Visualization.
 
 ## Course Session 9 - Microsoft Session #4
 PowerBI session

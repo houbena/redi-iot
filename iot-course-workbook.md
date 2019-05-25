@@ -376,7 +376,53 @@ These events have been sent by the sensor attached to your Raspberry Pi and redi
 
 ## Course Session 8 - Microsoft Session #3
 
-while IoT Central is SaaS / is much more than an IoT Hub / it comes with several things e.g. the IoT Hub and Analytics and Visualization.
+In this session we will use *Azure Stream Analytics* to monitor the values coming from the setting of last session.
+
+Stream Analytics is a service included in Microsoft Azure. It offers different features to filter and transform data that comes from your IoT devices - in our case the Raspberry Pi - in real time.
+Stream Analytics is integrated with Azure IoT Hub.
+
+1.  Connect your Raspberry Pi to your computer, and make sure it's running.
+
+2.  In the course Slack channel you find a JSON shared by your instructor, copy it.
+
+3.  Visit your Node-RED instance on `<pi-ip>:1880`, click on the **menu icon** in the top right corner, click on **Import > Clipboard** to import the copied JSON.
+
+4.  Go to portal.azure.com. In the search field look for IoT Hub and click on it.
+
+5.  In the IoT Hub, in the list of IoT hubs, click on **redischool01**.
+
+6.  In the list of services, under **Explorers**, click on **IoT devices**.
+
+7.  Add a device by clicking on **+ Add**
+
+8.  After setting your *Device ID* and keeping the default values of all other settings, click on **Save**
+
+9.  Copy the *Connection string-primary key* that has been generated automatically
+
+
+10. In Node-RED, Paste the connection string in the imported JSON as a value of the *key* like shown in the next screenshot:
+
+    ![Connection string in imported JSON](img/node-red-2.png)
+
+Now it's time to create a stream analytics job and configure it.
+
+11. In the Azure portal, click **+ Create a resource**, look for *Stream Analytics Job*.
+
+12. In the Stream Analytics job intro page, click **Create**, give the job a name and click **Create** again.
+
+13. After the job is created, navigate to it. Click on **Edit query**, and paste the following SQL-like query to its *Query* field:
+    ```sql
+    SELECT
+        Student, 
+        AVG(CAST(s.Humidity as float)) Humidity,
+        AVG(CAST(s.Temperature as float)) Temperature, 
+        System.Timestamp as EventTime
+    FROM sensorstream s
+    GROUP BY TumblingWindow(second, 10), Student
+    ```
+    This will filter the received data and return only the average value of humidity and temperature. The last line means that the events will be grouped in a fixed-sized, non-overlapping intervals of 10 seconds.
+
+14. Finally in Node-RED, deploy your application and go back to the *overview* of your *Stream Analytics job* in the Azure portal and watch the Monitoring section for incoming events.
 
 ## Course Session 9 - Microsoft Session #4
 PowerBI session
